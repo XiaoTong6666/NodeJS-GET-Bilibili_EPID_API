@@ -29,7 +29,7 @@ http.createServer((req, res) => {
     const u = url.parse(req.url, true);
     const ip = u.pathname.substr(1);
 gyuan(ip).then((yuan) => {
-  const hyuan = yuan !== null ? yuan : 'null'; 
+  const hyuan = yuan !== null ? yuan : '{}'; 
   res.writeHead(200, { 'Content-Type': 'application/json' });
   res.write(hyuan);
   res.end();
