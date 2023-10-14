@@ -7,17 +7,15 @@
     <link rel="stylesheet" href="node_modules/dplayer/dist/DPlayer.min.css">
 </head>
 <body bgcolor="#000000">
-    <div>
-        <label for="inputEpid">ep号(数字部分)</label>
-        <input type="text" id="inputEpid" placeholder="输入为纯数字">
-
+   <div>
+        <label for="inputEpid"></label>
+        <input type="text" id="inputEpid" placeholder="ep号(数字部分)">
         <br>
-
-        <label for="inputVideoUrl">视频url(m3u8和mp4都可以):</label>
-        <input type="text" id="inputVideoUrl" placeholder="输入为链接">
-
+        <label for="inputVideoUrl"></label>
+        <input type="text" id="inputVideoUrl" placeholder="视频链接(m3u8和mp4都可以)">
         <br>
-
+        <button onclick="createDPlayer()">确定</button>
+    </div>
         <button onclick="createDPlayer()">确定</button>
     </div>
 
