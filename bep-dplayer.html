@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,17 +15,13 @@
         <br>
         <button onclick="createDPlayer()">确定</button>
     </div>
-        <button onclick="createDPlayer()">确定</button>
-    </div>
-
     <div id="dplayer-container"></div>
-	
 <script src="https://cdn.jsdelivr.net/npm/dplayer@1.26.0/dist/DPlayer.min.js"></script>
     <script>
         function createDPlayer() {
             var epid = document.getElementById('inputEpid').value;
             var videoUrl = document.getElementById('inputVideoUrl').value;
-var proxyapi = ``;
+            var proxyapi = ``;
             const options = {
                 container: document.getElementById('dplayer-container'),
                 video: {
