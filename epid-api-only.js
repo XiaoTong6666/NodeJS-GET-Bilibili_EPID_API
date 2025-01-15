@@ -1,6 +1,7 @@
 const http = require('http');
 const cheerio = require('cheerio');
 const url = require('url');
+const port = 8080;
 async function gyuan(ip) {
     const hyuan = await fetch(`https://www.bilibili.com/bangumi/play/ep${ip}`, {
       headers: {
@@ -20,7 +21,7 @@ async function gyuan(ip) {
     const $ = cheerio.load(htm);
     const yuan =$('script#__NEXT_DATA__').html();
 	const jsonData = JSON.parse(yuan);
-	const fData = jsonData.props.pageProps.dehydratedState.queries[0].state.data.epMap[ip];
+	const fData = jsonData.props.pageProps.dehydratedState.queries[0].state.data.result.play_view_business_info.episode_info;
   const fd = JSON.stringify(fData);
   return fd;
 }
@@ -35,4 +36,7 @@ gyuan(ip).then((fd) => {
   res.write(hy);
   res.end();
 });} 
-}).listen(102);
+}).listen(port, () => {
+	console.log('监听端口：'+port);
+	console.log(`使用例子：curl "http://[::1]:${port}/341209"`)
+	});
