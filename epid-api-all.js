@@ -11,6 +11,10 @@ async function huoqu(epid) {
     const neirong = await yuanshi.text();
     const $ = cheerio.load(neirong);
     const yuanjson =$('script#__NEXT_DATA__').html();
+    // const jsondata = JSON.parse(yuanjson);
+    // const guolvjson = jsondata.props.pageProps.dehydratedState.queries[0].state.data.result.play_view_business_info.episode_info;
+    // const gl = JSON.stringify(guolvjson);
+    // return gl;
     return yuanjson;
 }
 http.createServer((req, res) => {
